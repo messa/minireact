@@ -17,10 +17,15 @@ function App() {
     setItems(newItems)
   }
 
+  const addItem = ({ title }) => {
+    const newItems = [...items, { title: title, votes: 1 }]
+    setItems(newItems)
+  }
+
   return (
     <div>
       <ItemList items={items} addVote={addVote} />
-      <NewItemForm />
+      <NewItemForm addItem={addItem} />
     </div>
   )
 }
@@ -40,10 +45,11 @@ function ItemList({ items, addVote }) {
   )
 }
 
-function NewItemForm() {
+function NewItemForm({ addItem }) {
   const [ title, setTitle ] = React.useState('')
   const handleSubmit = (event) => {
     console.debug('Adding new item:', title)
+    addItem({ title })
     setTitle('')
     event.preventDefault()
   }

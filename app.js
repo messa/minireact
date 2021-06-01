@@ -23,6 +23,17 @@ const initialItems = [
       setItems(newItems);
     };
 
+    const addItem = ({ title }) => {
+      const newItems = [
+        ...items,
+        {
+          title: title,
+          votes: 1
+        }
+      ];
+      setItems(newItems);
+    };
+
     return /*#__PURE__*/ React.createElement(
       "div",
       null,
@@ -30,7 +41,9 @@ const initialItems = [
         items: items,
         addVote: addVote
       }),
-      /*#__PURE__*/ React.createElement(NewItemForm, null)
+      /*#__PURE__*/ React.createElement(NewItemForm, {
+        addItem: addItem
+      })
     );
   }
 
@@ -75,11 +88,14 @@ const initialItems = [
     );
   }
 
-  function NewItemForm() {
+  function NewItemForm({ addItem }) {
     const [title, setTitle] = React.useState("");
 
     const handleSubmit = (event) => {
       console.debug("Adding new item:", title);
+      addItem({
+        title
+      });
       setTitle("");
       event.preventDefault();
     };
