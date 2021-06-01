@@ -10,7 +10,32 @@ Files:
 - `app.js` - pure-JavaScript version generated from `app.jsx` by [Babel.js](https://babeljs.io/repl/)
 - `minireact.js` - MiniReact implementation (in ES6 JavaScript, compatible with most modern browsers)
 
+
 Screenshot
 ----------
 
 <a href='https://minireact.vercel.app/'><img alt='Screenshot' src='https://user-images.githubusercontent.com/115487/120337946-0ebce000-c2f4-11eb-9af9-9e0ee9ed5f52.png' width=300></a>
+
+
+Links
+-----
+
+Discussion:
+
+- [Junior.guru](https://junior.guru/) Discord: https://discord.com/channels/769966886598737931/811910782664704040/849292462488944690
+
+Similar React-from-scratch approaches:
+
+- https://andela.com/insights/building-your-own-version-of-react-from-scratch-part-1/
+- https://pomb.us/build-your-own-react/
+
+Actual React source code:
+
+- https://unpkg.com/react@17.0.2/umd/react.development.js
+- https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js
+- https://github.com/facebook/react
+
+React now transitions to an internal async render architecture named Fiber:
+
+- https://github.com/acdlite/react-fiber-architecture#readme
+- https://dev.to/burhanuday/react-internals-fiber-architecture-280l
