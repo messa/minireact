@@ -128,6 +128,9 @@ class HTMLElementInstance {
     if (!this.domNode) {
       this.domNode = document.createElement(this.htmlElement.type)
     }
+    if (this.htmlElement.props.className) {
+      this.domNode.className = this.htmlElement.props.className
+    }
     if (this.htmlElement.props.type) {
       this.domNode.type = this.htmlElement.props.type
     }
