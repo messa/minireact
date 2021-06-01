@@ -4,24 +4,36 @@ const initialItems = [
 ]
 
 function App() {
-  const items = initialItems
+  const [ items, setItems ] = React.useState(initialItems)
+
+  const addVote = (item, delta) => {
+    const newItems = items.map(currentItem => {
+      if (currentItem === item) {
+        return { ...currentItem, votes: currentItem.votes + delta }
+      } else {
+        return currentItem
+      }
+    })
+    setItems(newItems)
+  }
+
   return (
     <div>
-      <ItemList items={items} />
+      <ItemList items={items} addVote={addVote} />
       <NewItemForm />
     </div>
   )
 }
 
-function ItemList({ items }) {
+function ItemList({ items, addVote }) {
   return (
     <ul className='items'>
       {items.map(item => (
         <li>
           <span className='item-title'>{item.title}</span>
-          {' '}<button>-</button>{' '}
+          {' '}<button onClick={() => addVote(item, -1)}>-</button>{' '}
           {item.votes}
-          {' '}<button>+</button>{' '}
+          {' '}<button onClick={() => addVote(item, 1)}>+</button>{' '}
         </li>
       ))}
     </ul>
