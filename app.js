@@ -31,7 +31,13 @@ const initialItems = [
         /*#__PURE__*/ React.createElement(
           "li",
           null,
-          item.title,
+          /*#__PURE__*/ React.createElement(
+            "span",
+            {
+              className: "item-title"
+            },
+            item.title
+          ),
           " ",
           /*#__PURE__*/ React.createElement("button", null, "-"),
           " ",
@@ -50,7 +56,7 @@ const initialItems = [
     const handleSubmit = (event) => {
       console.debug("Adding new item:", title);
       setTitle("");
-      event.preventDefault()
+      event.preventDefault();
     };
 
     return /*#__PURE__*/ React.createElement(
@@ -59,7 +65,8 @@ const initialItems = [
         onSubmit: handleSubmit
       },
       /*#__PURE__*/ React.createElement("input", {
-        placeholder: "New item",
+        type: "text",
+        placeholder: "Add new item",
         value: title,
         onChange: (event) => setTitle(event.target.value)
       }),

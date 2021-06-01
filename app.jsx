@@ -18,7 +18,7 @@ function ItemList({ items }) {
     <ul className='items'>
       {items.map(item => (
         <li>
-          {item.title}
+          <span className='item-title'>{item.title}</span>
           {' '}<button>-</button>{' '}
           {item.votes}
           {' '}<button>+</button>{' '}
@@ -38,7 +38,8 @@ function NewItemForm() {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        placeholder='New item'
+        type='text'
+        placeholder='Add new item'
         value={title}
         onChange={event => setTitle(event.target.value)}
       />

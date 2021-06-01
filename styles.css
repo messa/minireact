@@ -15,3 +15,31 @@ body {
 h1 {
   font-weight: 300;
 }
+button, input[type='submit'] {
+  background: #222;
+  border: 1px solid #999;
+  color: #999;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+ul.items li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+ul.items li .item-title {
+  display: inline-block;
+  min-width: 150px;
+}
+form {
+  margin-top: 2em;
+}
+input[type='text'] {
+  background: none;
+  border-bottom: 1px solid #999;
+  color: #ccc;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
