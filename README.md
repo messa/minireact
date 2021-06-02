@@ -7,7 +7,11 @@ Files:
 
 - `index.html` - HTML page for the Poll app
 - `app.jsx` - the Poll app JSX source code
-- `app.js` - pure-JavaScript version generated from `app.jsx` by [Babel.js](https://babeljs.io/repl/)
+- `app.js` - pure-JavaScript version generated from `app.jsx` by [Babel.js](https://babeljs.io/repl/), run following if you modify app.jsx
+  ```sh
+  $ npm install --save-dev @babel/core @babel/cli @babel/preset-react
+  $ npx babel app.jsx --out-file app.js --presets=@babel/react
+  ```
 - `minireact.js` - MiniReact implementation (in ES6 JavaScript, compatible with most modern browsers)
 
 
