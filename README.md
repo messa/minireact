@@ -28,6 +28,7 @@ Similar React-from-scratch approaches:
 
 - https://andela.com/insights/building-your-own-version-of-react-from-scratch-part-1/
 - https://pomb.us/build-your-own-react/
+- https://zserge.com/posts/worst-react-ever/
 
 Actual React source code:
 
