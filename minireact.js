@@ -244,10 +244,10 @@ class HooksDispatcher {
   useState(initialState) {
     const hookData = this.getHookData('useState')
     if (typeof hookData.value === 'undefined') {
-      hookData.value = initialState
+      hookData.value = initialState instanceof Function ? initialState() : initialState
     }
     const setNewValue = (newValue) => {
-      hookData.value = newValue
+      hookData.value = newValue instanceof Function ? newValue(hookData.value) : newValue
       this.triggerRerender()
     }
     return [ hookData.value, setNewValue ]

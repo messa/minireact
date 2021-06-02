@@ -18,8 +18,7 @@ function App() {
   }
 
   const addItem = ({ title }) => {
-    const newItems = [...items, { title: title, votes: 1 }]
-    setItems(newItems)
+    setItems(currentItems => [...currentItems, { title: title, votes: 1 }])
   }
 
   return (
